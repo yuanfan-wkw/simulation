@@ -89,5 +89,5 @@ sup=10;
 delta=1;
 
 
-sys(1)=-(1/h)*(-f-ddx1d+a1*(m1/n1)*sign(e1)*abs(e1)^(m1/n1-1)*e2+b1*(p1/q1)*sign(e1)*abs(e1)^(p1/q1-1)*e2+gama1*e2+a2*sign(s)*abs(s)^(m2/n2)+b2*sign(s)*abs(s)^(p2/q2)+gama2*s+(sup+delta)*sign(s));
+sys(1)=-(1/h)*(-f-ddx1d+a1*(m1/n1)*sign(e1)*abs(e1)^(m1/n1-1)*e2+b1*(p1/q1)*sign(e1)*abs(e1)^(p1/q1-1)*e2+gama1*e2+a2*sign(s)*abs(s)^(m2/n2)+b2*sign(s)*abs(s)^(p2/q2)+gama2*s+(sup+delta)*2/pi*atan(30*s));
 end

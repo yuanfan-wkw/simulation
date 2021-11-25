@@ -1,0 +1,44 @@
+close all;
+
+figure(1);
+%plot speed of motor
+
+plot(wm,'b','linewidth',2);
+%横坐标坐标刻度设置
+set(gca,'xtick',0:0.1:0.4)
+%很总坐标坐标名称
+xlabel('time(s)','fontname','Times');ylabel('$n$(r/min)','Interpreter','latex');
+
+title('')
+%图例
+x1d=legend('$\omega_m$');
+%坐标轴刻度
+set(gca,'linewidth',1,'fontsize',20,'fontname','Times');
+set(x1d,'Interpreter','latex','FontSize',28,'box','off','Location','north')
+delete(get(gca,'title'));
+
+
+
+
+figure(2);
+plot(ia,'r','linewidth',2);
+hold on
+plot(ib,'--b','linewidth',2);
+hold on
+plot(ic,'-.g','linewidth',2);
+xlabel('time(s)','FontSize',20,'Interpreter','latex');ylabel('$i/A$','FontSize',20,'Interpreter','latex');
+
+x1d=legend('$i_a$','$i_b$','$i_c$');
+set(x1d,'Interpreter','latex','FontSize',28,'box','off','Location','north')
+title('')
+delete(get(gca,'title'));
+
+figure(3);
+plot(Te,'r','linewidth',2);
+
+xlabel('time(s)','FontSize',20,'Interpreter','latex');ylabel('$i/A$','FontSize',20,'Interpreter','latex');
+
+x1d=legend('$Te$');
+set(x1d,'Interpreter','latex','FontSize',28,'box','off','Location','north')
+title('')
+delete(get(gca,'title'));

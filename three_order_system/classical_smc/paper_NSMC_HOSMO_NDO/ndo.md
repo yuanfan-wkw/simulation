@@ -174,7 +174,17 @@ $$
 
 同样的取$\delta=0.1$
 
-### 1 ndo设计
+##### 4.2 使用连续函数sigm()代替符号函数sign()
+
+$$
+u_{en}=-\frac{1}{5}\delta\text{sigm}(s_1)
+$$
+
+其中$\operatorname{sigm}(x) \triangleq \frac{2}{\pi} \arctan (\varepsilon x), \varepsilon \in \mathbb{R}^{+}$
+
+取$\varepsilon=30$
+
+### 4 ndo设计
 
 系统方程最后一个公式：
 $$
@@ -184,3 +194,39 @@ NDO被设计为：
 $$
 \dot{\hat{d}}_n=-\eta \hat{d_n}+\eta(\dot{x}_3-x_1x_2x_3-x_1 \sin(x_1)-5u-F)
 $$
+
+### 5 仿真比较，采用同样的嵌套滑模面，参数设置为$c_0=c_1=2$，仿真时间$t=20$，不比较跟踪速度，主要比较输入。
+
+##### 5.1 NSMC
+
+跟踪曲线
+
+![track_c2_t20](/Users/wkw/Documents/GitHub/simulation/three_order_system/version_1/paper_NSMC/track_c2_t20.jpg)
+
+控制输入
+
+![control_c2_t20](/Users/wkw/Documents/GitHub/simulation/three_order_system/version_1/paper_NSMC/control_c2_t20.jpg)
+
+##### 5.2 NSMC+HOSMO+NDO
+
+跟踪曲线
+
+![track_c2_t20_sigm](/Users/wkw/Documents/GitHub/simulation/three_order_system/classical_smc/Copy_of_paper_NSMC_HOSMO_NDO/track_c2_t20_sigm.jpg)
+
+控制输入
+
+![control_c2_t20_sigm](/Users/wkw/Documents/GitHub/simulation/three_order_system/classical_smc/Copy_of_paper_NSMC_HOSMO_NDO/control_c2_t20_sigm.jpg)
+
+注：修改参数$c_0,c_1$会增大滑模变量变化速率，因此改变系统状态量的变化率，所以会导致控制器动态特性较差。同时也需要选择较大的HOSMO参数增益，因此状态微分的跟踪动态特性较差，导致控制器的输入特性也较差。
+
+优点无抖振，能量消耗小。(展开写)
+
+##### 5.3 结果分析
+
+| 控制方法       |      |
+| -------------- | :--: |
+| NSMC           |      |
+| NSMC+HOSMO+NDO |      |
+
+$E=\int_0^{20}|u|\text{d}t$
+

@@ -242,6 +242,16 @@ $$
 $$
 u=\frac{1}{h}(-f(\theta,t)-\ddot x_{1d}+\alpha_{1} (m_1/n_1)e_{1}^{\left(m_{1} / n_{1}-1\right)}e_2+\beta_{1} (p_1/q_1)e_{1}^{\left(p_{1} / q_{1}-1\right)}e_2+\alpha_{2} s^{\frac{m_{2}}{n_{2}}}+\beta_{2} s^{\frac{p_{2}}{q_{2}}}+\gamma \operatorname{sign}(s))
 $$
+证明：
+
+
+
+
+
+
+
+
+
 仿真结果:
 
 ![track](/Users/wkw/Documents/GitHub/simulation/typical_motor_system/classical_smc/double_power_reach/track.jpg)
@@ -272,7 +282,7 @@ $$
 
 同理具有有限时间的特性。(==给出证明==)有限时间的证明
 
-​		根据上述分析，趋近律设计再利用$\eqref{eq4}$微分方程。不过趋近律不设计奇异性，只需$m_2>n_2,p_2<q_2$
+​		根据上述分析，趋近律设计再利用$\eqref{eq4}$微分方程。趋近律不用考虑奇异性，只需$m_2>n_2,p_2<q_2$
 $$
 \dot{s}=-\alpha_{2} s^{\frac{m_{2}}{n_{2}}}-\beta_{2} s^{\frac{p_{2}}{q_{2}}}-\gamma_2 s -(\sup(d(t))+\delta)\operatorname{sign}(s)
 $$
@@ -292,6 +302,13 @@ u(t)_{en}&=-\frac{1}{h}(\sup(d(t))+\delta)\operatorname{sign}{s}
 $$
 仿真参数 $x_d=\sin( t),c=15,f(\theta,t)=25\dot\theta,h=133,d(t)=10\sin(\pi t),m_1=5,n_1=3,p_1=5,q_1=7,m_2=5,n_2=3,p_2=5,q_2=7,$$\alpha_1=\alpha_2=3,\beta_1=\beta_2=3，\gamma_1=\gamma_2=3$
 
+证明
+$$
+\begin{align}
+\dot V&=e \dot e\\
+&e(\dot x-\dot x_d)
+\end{align}
+$$
 仿真结果
 
 ![track](/Users/wkw/Documents/GitHub/simulation/typical_motor_system/new_non-single_fixed_terminal_smc/track.jpg)

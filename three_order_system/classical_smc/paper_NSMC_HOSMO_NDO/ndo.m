@@ -49,7 +49,7 @@ end
 
 % Compute derivatives for continuous states.
 function sys = mdlDerivatives(t,x,u)
-eta=10;
+eta=2;
 F=0.01*u(2)*exp(-0.5*u(1));
 sys(1)=-eta*x(1)+eta*(u(4)-u(1)*u(2)*u(3)-u(1)*sin(u(1))-5*u(5)-F);
 end
